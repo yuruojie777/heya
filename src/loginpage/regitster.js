@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import './css/login.css';
 
-const LoginForm = ()=>{
+const RegisterForm = ()=>{
     const baseUrl = 'http://habitracker.club/heya/';
 
 const [email, setEmail] = useState('');
@@ -37,7 +37,7 @@ function handleSubmit (e) {
         }
         const data = {email: email, password: password};
         console.log(data);
-        login('login',data);
+        login('register',data);
     } else {
         alert('empty values');
         return;
@@ -53,7 +53,7 @@ function emailValidation(email){
 }
     return (
         <div className='loginform'>
-            <h1>Login</h1>
+            <h1>Register</h1>
             <form onSubmit={handleSubmit}>
                 <div className='form-control'>
                     <input className='input-email' type="text" name="email" value={email} placeholder="Email" autoComplete='off' onChange={(e)=>setEmail(e.target.value)}/>
@@ -68,9 +68,9 @@ function emailValidation(email){
                     autoComplete='off'
                     onChange={(e)=>setPassword(e.target.value)}/>
                 </div>
-                <div><Link className='register-link' to='/register'>Register now!</Link></div>
+                <div><Link className='register-link' to='/login'>Login now!</Link></div>
                 
-                <button type='submit' className='btn'>Sign in</button>
+                <button type='submit' className='btn'>Sign up</button>
                 <div className='div-help'><Link className='help-link' to='/help'>Need help?</Link></div>
                 {/* <button type='reset' onClick={(e)=>{setEmail('');setPassword('');}}>Reset</button> */}
             </form>
@@ -78,4 +78,4 @@ function emailValidation(email){
     );
 }
 
-export default LoginForm;
+export default RegisterForm;

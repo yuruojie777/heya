@@ -1,0 +1,85 @@
+
+.input-email {
+    width: 270px;
+    height: 18px;
+    padding: 8px 5px 6px 38px;
+    margin-bottom: 22px;
+    border-radius: 7px;
+    background-image: url(./icon-email.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 10px;
+    border: none;
+    font-size: large;
+    outline: 1px solid black;
+}
+
+
+.input-password {
+    width: 270px;
+    height: 18px;
+    padding: 8px 5px 6px 38px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    background-image: url(./icon-password.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 10px;
+    border: none;
+    font-size: large;
+    outline: 1px solid black;
+}
+
+input:focus {
+    outline: 1px solid blue;
+}
+
+.btn {
+    width: 313px;
+    height: 40px;
+    margin-top: 20px;
+    color: aliceblue;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(47, 100, 247);
+    border-radius: 7px;
+    border: none;
+}
+
+.btn:hover {
+    background-color: rgb(20, 81, 248);
+}
+
+.loginform {
+    background-color: bisque;
+    background-image: url(./login-windows.jpg);
+    background-size: cover;
+    background-position: -8px;
+    background-repeat: no-repeat;
+    width: 529px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 240px;
+    padding-top: 14px;
+    padding-bottom: 10px;
+    box-shadow: 1px 1px 5px 5px rgb(112, 111, 111);
+}
+
+
+.register-link {
+    font-size: small;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 227px;
+}
+
+.help-link {
+    font-size: small;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 227px;
+}
+
+.div-help {
+    padding-left: 144px;
+    padding-top: 30px;
+}
