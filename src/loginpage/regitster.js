@@ -7,6 +7,7 @@ const RegisterForm = ()=>{
 
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
+const [error, setError] = useState('');
 
 function login (api, data) {
     fetch(baseUrl+api, {
@@ -22,7 +23,9 @@ function login (api, data) {
         }
     })
     .then(user =>{
-        alert(user['message']);
+        if(user['code'] !== 1){
+            setError(user['message']);
+        }
     })
     .catch((error)=> alert(error));
 
@@ -32,14 +35,16 @@ function handleSubmit (e) {
     e.preventDefault();
     if(email && password) {
         if(!emailValidation(email)) {
-            alert("format incorrect");
+            setError('Format incorrect!')
+            // alert("format incorrect");
             return;
         }
         const data = {email: email, password: password};
         console.log(data);
         login('register',data);
     } else {
-        alert('empty values');
+        setError('Empty values')
+        // alert('empty values');
         return;
     }
 }
@@ -68,7 +73,10 @@ function emailValidation(email){
                     autoComplete='off'
                     onChange={(e)=>setPassword(e.target.value)}/>
                 </div>
-                <div><Link className='register-link' to='/login'>Login now!</Link></div>
+                <div className='test'>
+                    <div className='error'>{error}</div>
+                    <div className='register-link'><Link to='/login'>Login now!</Link></div>
+                </div>
                 
                 <button type='submit' className='btn'>Sign up</button>
                 <div className='div-help'><Link className='help-link' to='/help'>Need help?</Link></div>
